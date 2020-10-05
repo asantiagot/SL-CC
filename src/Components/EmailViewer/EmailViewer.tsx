@@ -43,7 +43,6 @@ export const EmailViewer: FunctionComponent<IEmailViewerProps> = ({
     }
   }, [location.pathname, emails]);
 
-  console.log(typeof emails)
   return (
     <EmailViewerContainer>
       {singleEmail ? (

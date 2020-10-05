@@ -26,7 +26,7 @@ export const App: FunctionComponent = () => {
   const [starredEmails, setStarredEmails] = useState(Array);
   const [filteredEmails, setFilteredEmails] = useState(Array);
 
-  const filterEmails = (tag: any) => {
+  const filterEmails = (tag: string) => {
     if (tag === "all") {
       return;
     }
@@ -36,14 +36,14 @@ export const App: FunctionComponent = () => {
     );
   };
 
-  const removeItem = (id: any) => {
+  const removeItem = (id: string) => {
     setEmails((emails) => [...emails].filter((email) => email.id !== id));
     alert("Your email was removed");
     const newlyDeletedEmail = emails.filter((email) => email.id === id)[0];
     setDeletedEmails((deletedEmails) => [...deletedEmails, newlyDeletedEmail]);
   };
 
-  const starEmail = (id: any) => {
+  const starEmail = (id: string) => {
     if (starredEmails.filter((email: any) => email.id === id).length > 0) {
       return setStarredEmails((starredEmails: any) =>
         starredEmails.filter((email: any) => email.id !== id)
